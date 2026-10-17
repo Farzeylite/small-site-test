@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Блог</title>
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <h1>Файлы в директории</h1>
+    <ul class="block">
+        {% for file in files %}
+            <li>
+                <a href="{{ url_for('download_file', filename=file) }}">{{ file }}</a>
+            </li>
+        {% else %}
+            <li>Папка пуста или не найдейна.</li>
+        {% endfor %}
+    </ul>
+    </body>
+</html>
